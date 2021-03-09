@@ -100,15 +100,15 @@ export default {
     showResults() {
       this.finished = true
       localStorage.setItem('finished', this.finished)
-      this.precentageScore = this.prepareResults()
-      localStorage.setItem('percentage_score', this.precentageScore)
+      this.percentageScore = this.prepareResults()
+      localStorage.setItem('percentage_score', this.percentageScore)
     },
 
     takeTestAgain() {
       this.index = 0
       this.selectedAnswer = ''
       this.candidateAnswers = []
-      this.precentageScore = 0
+      this.percentageScore = 0
       this.finished = false
       this.removeFromLocalStorage()
     },
