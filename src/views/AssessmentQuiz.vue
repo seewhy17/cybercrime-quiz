@@ -47,6 +47,7 @@
 
 </template>
 <script>
+import Questions from '../questions'
 export default {
   data: () => ({
     index: 0,
@@ -54,18 +55,7 @@ export default {
     candidateAnswers: [],
     percentageScore: 0,
     finished: false,
-    questions: [
-      {
-        q: 'What is my name?',
-        answers: { a: 'Oladele', b: 'Awilo', c: 'Cyril', d: 'Akanni'},
-        correctAnswer: 'c'
-      },
-      {
-        q: 'What is my age?',
-        answers: { a: 23, b: 47, c: 32, d: 34},
-        correctAnswer: 'd'
-      },
-    ]
+    questions: Questions,
   }),
   methods: {
     pickedAnswer(value) {
