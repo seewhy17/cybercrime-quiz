@@ -90,7 +90,7 @@ export default {
     showResults() {
       this.finished = true
       localStorage.setItem('finished', this.finished)
-      this.percentageScore = this.prepareResults()
+      this.percentageScore = Math.round(this.prepareResults())
       localStorage.setItem('percentage_score', this.percentageScore)
     },
 
