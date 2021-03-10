@@ -107,6 +107,7 @@ export default {
       localStorage.setItem('index', this.index)
       localStorage.setItem('finished', `${this.finished}`)
       localStorage.setItem('candidate_answers', JSON.stringify(this.candidateAnswers))
+      localStorage.setItem('percentage_score', this.percentageScore)
     },
 
     removeFromLocalStorage() {
