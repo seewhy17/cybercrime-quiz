@@ -62,9 +62,9 @@ export default {
       this.selectedAnswer = value
       // record answer
       if (this.selectedAnswer == this.questions[this.index].correctAnswer) {
-        this.candidateAnswers.push({correct: 1, wrong: 0});
+        this.candidateAnswers.push({choice: value, correct: 1, wrong: 0});
       } else {
-        this.candidateAnswers.push({correct: 0, wrong: 1});
+        this.candidateAnswers.push({choice: value, correct: 0, wrong: 1});
 
       }
       // add to localStorage
@@ -138,14 +138,14 @@ export default {
   mounted() {
     if (localStorage.getItem('index') != null &&
       localStorage.getItem('candidate_answers') != null) {
-    this.index = localStorage.getItem('index')
-    this.finished = () => {
-      if (localStorage.getItem('index') === 'false') return false
-      if (localStorage.getItem('index') === 'true') return true
-    }
-
+    this.index = parseInt(localStorage.getItem('index'), 10)
+    this.finished = function() {
+      if ( localStorage.getItem('finished') === 'false' ) return false
+      if ( localStorage.getItem('finished') === 'true' ) return true
+    }()
     this.candidateAnswers = JSON.parse(localStorage.getItem('candidate_answers'))
     this.percentageScore = parseInt(localStorage.getItem('percentage_score'), 10)
+    this.selectedAnswer = (this.finished == false) ? this.candidateAnswers[this.index].choice : ''
     }
   }
 }
