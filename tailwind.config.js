@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
           'sans': ['Commissioner', ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: theme => ({
+          "hero-image": "url('/src/assets/cybercrime-bg.jpg')",
+      }),
     },
   },
   variants: {

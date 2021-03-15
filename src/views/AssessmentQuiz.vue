@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/3 mx-auto">
+  <layout>
     <h1 class="text-2xl my-4">Assessment Quiz</h1>
     <div class="p-6 shadow">
       <div v-show="!finished">
@@ -41,14 +41,15 @@
         </div>
       </div>
     </div>
-
-
-  </div>
-
+  </layout>
 </template>
 <script>
+import Layout from './Layout.vue'
 import Questions from '../questions'
 export default {
+  components: {
+    Layout,
+  },
   data: () => ({
     index: 0,
     selectedAnswer: '',
@@ -132,6 +133,17 @@ export default {
 
     numberOfQuestions() {
       return this.questions.length
+    }
+  },
+
+  watch: {
+    index: function (value, oldValue) {
+      console.log(value, oldValue);
+      // console.log(this);
+      if (value !== (oldValue + 1)) {
+        this.index = 0
+        this.removeFromLocalStorage()
+      }
     }
   },
 

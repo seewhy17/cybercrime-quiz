@@ -19,15 +19,7 @@ const AssessmentQuiz = () =>
     /* webpackChunkName: "accounts" */
     /* webpackPrefetch: true */
     './views/AssessmentQuiz.vue'
-  );
-
-const LearnMore = () =>
-  import(
-    /* webpackChunkName: "savings" */
-    /* webpackPrefetch: true */
-    './views/LearnMore.vue'
   )
-
 
 
 
@@ -46,11 +38,6 @@ const routes = [
     path: '/quiz',
     name: 'qquiz',
     component: AssessmentQuiz
-  },
-  {
-    path: '/learn',
-    name: 'learn',
-    component: LearnMore
   }
 ]
 
