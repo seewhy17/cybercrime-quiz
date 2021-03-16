@@ -1,6 +1,6 @@
 <template>
   <layout>
-    <h1 class="text-2xl my-4">Assessment Quiz</h1>
+    <h1 class="text-2xl my-4 mx-8 md:mx-0">Assessment Quiz</h1>
     <div class="p-6 shadow">
       <div v-show="!finished">
         <p class="font-semibold text-lg py-2 text-sm">{{ questions[index].q }}</p>
@@ -138,8 +138,6 @@ export default {
 
   watch: {
     index: function (value, oldValue) {
-      console.log(value, oldValue);
-      // console.log(this);
       if (value !== (oldValue + 1)) {
         this.index = 0
         this.removeFromLocalStorage()
