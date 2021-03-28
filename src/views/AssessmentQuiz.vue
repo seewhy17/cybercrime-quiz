@@ -1,6 +1,9 @@
 <template>
   <layout>
-    <h1 class="text-2xl my-4 mx-8 md:mx-0">Assessment Quiz</h1>
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl my-4 mx-8 md:mx-0">Assessment Quiz</h1>
+      <p class="my-4 mx-8 md:mx-0">{{ index+1 }} / {{ numberOfQuestions }}</p>
+    </div>
     <div class="p-6 shadow">
       <div v-show="!finished">
         <p class="font-semibold text-lg py-2 text-sm">{{ questions[index].q }}</p>
