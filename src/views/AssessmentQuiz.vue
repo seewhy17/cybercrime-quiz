@@ -2,7 +2,7 @@
   <layout>
     <div class="flex justify-between items-center">
       <h1 class="text-2xl my-4 mx-8 md:mx-0">Assessment Quiz</h1>
-      <p class="my-4 mx-8 md:mx-0">{{ index+1 }} / {{ numberOfQuestions }}</p>
+      <p class="my-4 mx-8 md:mx-0">{{ index+1 }} / <span class="font-semibold">{{ numberOfQuestions }}</span></p>
     </div>
     <div class="p-6 shadow">
       <div v-show="!finished">
